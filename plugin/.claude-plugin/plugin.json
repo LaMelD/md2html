@@ -1,6 +1,6 @@
 {
   "name": "md2html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Claude Code 가 .md 파일을 작성/수정할 때마다 PostToolUse 훅이 md2html.py 를 자동 실행하여 같은 디렉토리에 .html 을 생성한다. 10종 테마 지원, 시스템 파일과 빌드 산출물 디렉토리는 자동 제외.",
   "author": {
     "name": "sjlee4628",
