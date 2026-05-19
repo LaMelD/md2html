@@ -88,7 +88,7 @@ def render_inline(text: str) -> str:
 		return _placeholder("INL", len(placeholders) - 1)
 
 	# 1) 인라인 코드 (내부 추가 처리 안 함)
-	def code_repl(m: re.Match) -> str:
+	def code_repl(m: "re.Match") -> str:
 		content = m.group(2).strip()
 		return store(f"<code>{_escape_html(content)}</code>")
 
@@ -98,7 +98,7 @@ def render_inline(text: str) -> str:
 	text = _RAW_HTML_RE.sub(lambda m: store(m.group(0)), text)
 
 	# 2) 이미지
-	def image_repl(m: re.Match) -> str:
+	def image_repl(m: "re.Match") -> str:
 		alt = _process_backslash_escapes(m.group("alt"))
 		src = m.group("src") or ""
 		title = m.group("title")
@@ -110,7 +110,7 @@ def render_inline(text: str) -> str:
 	text = _IMAGE_RE.sub(image_repl, text)
 
 	# 3) 링크
-	def link_repl(m: re.Match) -> str:
+	def link_repl(m: "re.Match") -> str:
 		link_text = m.group("text")
 		url = m.group("url") or ""
 		title = m.group("title")
@@ -123,7 +123,7 @@ def render_inline(text: str) -> str:
 	text = _LINK_RE.sub(link_repl, text)
 
 	# 4) 오토링크
-	def autolink_repl(m: re.Match) -> str:
+	def autolink_repl(m: "re.Match") -> str:
 		target = m.group(1)
 		href = ("mailto:" + target) if "@" in target and "://" not in target else target
 		return store(f'<a href="{_escape_html(href)}">{_escape_html(target)}</a>')
