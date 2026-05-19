@@ -1,0 +1,14 @@
+{
+  "PostToolUse": [
+    {
+      "matcher": "Write|Edit|MultiEdit",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/md2html-auto.sh\"",
+          "timeout": 30
+        }
+      ]
+    }
+  ]
+}
