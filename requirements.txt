@@ -1,7 +1,9 @@
-# md2html.py 는 Python 표준 라이브러리만 사용한다. 외부 패키지 의존성이 없다.
-# (argparse, html, os, re, sys, dataclasses, typing — 모두 stdlib)
+# md2html.py 는 Python 표준 라이브러리만 사용한다. 일반 환경에서는 외부 의존성이 없다.
+# (argparse, html, os, re, sys, typing — 모두 stdlib)
 #
-# 이 파일은 "pip install -r requirements.txt" 워크플로를 가정하는 CI/자동화
-# 환경과의 호환을 위해 의도적으로 비워둔 placeholder 다.
+# 단, dataclasses 는 Python 3.7 부터 표준 라이브러리이며 3.6 에서는 백포트가 필요하다.
+# 아래 환경 마커는 3.6 환경에서만 PyPI 백포트를 설치하고 3.7+ 에서는 자동 스킵한다.
 #
-# 요구 Python 버전: 3.7 이상 (dataclasses, `from __future__ import annotations`)
+# 요구 Python 버전: 3.6 이상 (3.7+ 권장)
+
+dataclasses; python_version < "3.7"
