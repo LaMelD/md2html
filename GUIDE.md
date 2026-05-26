@@ -399,9 +399,3 @@ md2html/
 | 1.0.1 | `dcf9583` | 마켓플레이스 캐시 무효화 (버전 bump) |
 | 1.0.2 | `11ce74f` | Python 3.6 호환 (`from __future__` 제거, dataclasses 백포트) |
 | 1.0.3 | `bb8c8c3` | `re.Match` 타입 힌트를 string literal 로 (3.6/3.7 회귀 수정) |
-
----
-
-## 10. 라이선스
-
-MIT
