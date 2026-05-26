@@ -117,7 +117,3 @@ md2html/
 ```
 
 `plugin/scripts/md2html.py` 는 저장소 루트의 `md2html.py` 사본이다. 변환기 업데이트 시 두 곳을 모두 동기화한다.
-
-## 라이선스
-
-MIT

@@ -139,7 +139,3 @@ MD2HTML_SKIP=1 claude
 ```bash
 /plugin uninstall md2html
 ```
-
-## 라이선스
-
-MIT
