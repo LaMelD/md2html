@@ -53,6 +53,7 @@ python3 ${CLAUDE_PLUGIN_ROOT}/scripts/md2html.py <file> -t manual -o <file>.html
 |------|------|
 | 시스템 파일 (basename) | `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `README.md`, `MEMORY.md`, `CHANGELOG.md`, `LICENSE.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SKILL.md` |
 | 경로 패턴 | `*/.claude/*`, `*/.claude-plugin/*`, `*/.git/*`, `*/node_modules/*`, `*/memory/*`, `*/.venv/*`, `*/venv/*`, `*/dist/*`, `*/build/*`, `*/.next/*`, `*/.cache/*` |
+| 사용자 패턴 | `MD2HTML_EXCLUDE` 환경변수의 콜론 구분 glob (예: `*/docs/worklog/*:*.draft.md`) |
 | 그 외 | 빈 파일 (0 byte), `.md` / `.markdown` 외 확장자 |
 
 자동 제외된 파일도 `md2html` 스킬로 명시 요청하면 강제 변환된다.
@@ -67,6 +68,7 @@ python3 ${CLAUDE_PLUGIN_ROOT}/scripts/md2html.py <file> -t manual -o <file>.html
 | `MD2HTML_PYTHON` | `python3` | Python 인터프리터 |
 | `MD2HTML_LOG` | `~/.claude/logs/md2html.log` | 로그 파일 경로 |
 | `MD2HTML_DEBUG` | (unset) | `1` 이면 디버그 로그까지 기록 |
+| `MD2HTML_EXCLUDE` | (unset) | 추가 제외 패턴. 콜론 구분 절대 경로 glob (예: `*/docs/worklog/*:*.draft.md`) |
 
 세션 전체 테마 변경:
 ```bash

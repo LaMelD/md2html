@@ -12,6 +12,7 @@
 #   MD2HTML_SCRIPT=<path>   → md2html.py 경로 오버라이드
 #   MD2HTML_LOG=<path>      → 로그 경로 오버라이드
 #   MD2HTML_DEBUG=1         → 상세 디버그 로그
+#   MD2HTML_EXCLUDE=<glob:glob> → 추가 제외 패턴 (콜론 구분, 절대 경로 glob. 예: */docs/worklog/*:*.draft.md)
 
 set -u
 
@@ -115,6 +116,18 @@ case "$FILE_PATH" in
     exit 0
     ;;
 esac
+
+# 7-3. 사용자 제외 패턴 (MD2HTML_EXCLUDE, 콜론 구분 glob)
+if [[ -n "${MD2HTML_EXCLUDE:-}" ]]; then
+  IFS=':' read -ra USER_PATTERNS <<<"$MD2HTML_EXCLUDE"
+  for PAT in "${USER_PATTERNS[@]}"; do
+    [[ -z "$PAT" ]] && continue
+    if [[ "$FILE_PATH" == $PAT ]]; then
+      debug "user excluded: $PAT"
+      exit 0
+    fi
+  done
+fi
 
 # ────────────────────────────────────────────────────────────────────────────
 # 8. md2html.py 찾기

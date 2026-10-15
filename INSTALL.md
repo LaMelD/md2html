@@ -85,6 +85,7 @@ sudo cp md2html.py /opt/md2html/md2html.py
 | `MD2HTML_PYTHON` | `python3` | Python 인터프리터 |
 | `MD2HTML_LOG` | `~/.claude/logs/md2html.log` | 훅 로그 경로 |
 | `MD2HTML_DEBUG` | (unset) | `1` 이면 디버그 로그 |
+| `MD2HTML_EXCLUDE` | (unset) | 추가 제외 패턴. 콜론 구분 절대 경로 glob (예: `*/docs/worklog/*:*.draft.md`) |
 
 ## 의존성
 

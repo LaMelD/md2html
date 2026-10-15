@@ -60,7 +60,7 @@ python3 "$SCRIPT" /abs/path/to/file.md -t release
 
 ### 2) 디렉토리 일괄 변환
 
-기본적으로 시스템 파일과 제외 디렉토리를 건너뛴다 (훅과 동일 규칙).
+기본적으로 시스템 파일과 제외 디렉토리를 건너뛴다 (훅과 동일 규칙). `MD2HTML_EXCLUDE` 환경변수(콜론 구분 glob)가 있으면 그 패턴도 건너뛴다.
 
 ```bash
 TARGET="/abs/path/to/dir"

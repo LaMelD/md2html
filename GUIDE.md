@@ -279,6 +279,7 @@ theme_id = resolve_theme("릴리즈 노트")  # → "release"
 |---|---|
 | 시스템 파일 (basename) | `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `README.md`, `MEMORY.md`, `CHANGELOG.md`, `LICENSE.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SKILL.md` |
 | 경로 패턴 | `*/.claude/*`, `*/.claude-plugin/*`, `*/.git/*`, `*/node_modules/*`, `*/memory/*`, `*/.venv/*`, `*/venv/*`, `*/dist/*`, `*/build/*`, `*/.next/*`, `*/.cache/*` |
+| 사용자 패턴 | `MD2HTML_EXCLUDE` 환경변수의 콜론 구분 glob (예: `*/docs/worklog/*:*.draft.md`) |
 | 기타 | 0 byte 파일, `.md`/`.markdown` 외 확장자 |
 
 스킬을 통해 **명시 요청**하면 강제 변환된다.
@@ -295,6 +296,7 @@ theme_id = resolve_theme("릴리즈 노트")  # → "release"
 | `MD2HTML_PYTHON` | `python3` | Python 인터프리터 |
 | `MD2HTML_LOG` | `~/.claude/logs/md2html.log` | 훅 로그 경로 |
 | `MD2HTML_DEBUG` | (unset) | `1` 이면 상세 디버그 로그 |
+| `MD2HTML_EXCLUDE` | (unset) | 추가 제외 패턴. 콜론 구분 절대 경로 glob (예: `*/docs/worklog/*:*.draft.md`) |
 
 세션 전체 기본 테마 변경:
 
